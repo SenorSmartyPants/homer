@@ -96,7 +96,7 @@ export default {
         this.fetch(`${this.apiPath}/movie?apikey=${this.item.apikey}`)
           .then((movies) => {
             this.missing = movies.filter(
-              (m) => m.monitored && !m.hasFile
+              (m) => m.monitored && !m.hasFile && m.isAvailable
             ).length;
           })
           .catch(handleError);
